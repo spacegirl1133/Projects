@@ -1,0 +1,246 @@
+def game1(): 
+    cnt1=0
+    cnt2=0
+    
+
+    import random
+
+    def level1():
+        print()
+        print('''
+                                      █▀▀ ▄▀█ █▀▄▀█ █▀▀   ▄█
+                                      █▄█ █▀█ █░▀░█ ██▄   ░█ ''')
+        print()       
+        print("🅻🅴🆅🅴🅻 🅸 🆂🆃🅰🆁🆃🆂\n\nᴵᴺˢᵀᴿᵁᶜᵀᴵᴼᴺˢ-ᵞᴼᵁ ᵂᴵᴸᴸ ᴴᴬᵛᴱ ᵀᴼ ᴬᴺˢᵂᴱᴿ 5 ᴿᴵᴰᴰᴸᴱˢ ᵀᴼ ᶜᴸᴱᴬᴿ ᵀᴴᴱ   ᶠᴵᴿˢᵀ ᴸᴱᵛᴱᴸ\nᵀᵞᴾᴱ ᵞᴼᵁᴿ ᴬᴺˢᵂᴱᴿˢ ᴵᴺ ˢᴹᴬᴸᴸ")
+        print()
+        d={ "𝓠𝓾𝓮𝓼𝓽𝓲𝓸𝓷- What is full of holes but still holds water?":"sponge",
+               "𝓠𝓾𝓮𝓼𝓽𝓲𝓸𝓷- What is always in front of you but can’t be seen?":"future",
+               "𝓠𝓾𝓮𝓼𝓽𝓲𝓸𝓷- What gets wet while drying?":"towel",
+               "𝓠𝓾𝓮𝓼𝓽𝓲𝓸𝓷- I shave every day, but my beard stays the same. What am I?":"barber",
+               "𝓠𝓾𝓮𝓼𝓽𝓲𝓸𝓷- I have branches, but no fruit, trunk or leaves. What am I?":"bank",
+               "𝓠𝓾𝓮𝓼𝓽𝓲𝓸𝓷- David’s parents have three sons: Snap, Crackle, and what’s the name of    the third son?":"david",
+              "𝓠𝓾𝓮𝓼𝓽𝓲𝓸𝓷- What gets bigger when more is taken away?":"hole",
+              "𝓠𝓾𝓮𝓼𝓽𝓲𝓸𝓷- I am an odd number. Take away a letter and I become even. What number am I?":"seven",
+              "𝓠𝓾𝓮𝓼𝓽𝓲𝓸𝓷- If you’re running in a race and you pass the person in second place, what place are you in?":"second",
+              "𝓠𝓾𝓮𝓼𝓽𝓲𝓸𝓷- What has words, but never speaks?":"book",
+              "𝓠𝓾𝓮𝓼𝓽𝓲𝓸𝓷- What has to be broken before you can use it?":"egg",
+              "𝓠𝓾𝓮𝓼𝓽𝓲𝓸𝓷- Mary has four daughters, and each of her daughters has a brother. How many children does Mary have?":"five",
+              "𝓠𝓾𝓮𝓼𝓽𝓲𝓸𝓷- What five-letter word becomes shorter when you add two letters to it?":"short"
+              }
+    
+        l=list(d.items())
+
+
+
+        print('''
+                                                   
+                                    ░█▀▀█ ▀█▀ ░█▀▀▄ ░█▀▀▄ ░█─── ░█▀▀▀ 
+                                    ░█▄▄▀ ░█─ ░█─░█ ░█─░█ ░█─── ░█▀▀▀ 
+                                    ░█─░█ ▄█▄ ░█▄▄▀ ░█▄▄▀ ░█▄▄█ ░█▄▄▄
+          
+            ''')
+     
+    
+        print("𝓐𝓷𝓼𝔀𝓮𝓻 𝓽𝓱𝓮 𝓻𝓲𝓭𝓭𝓵𝓮𝓼 𝓬𝓪𝓻𝓮𝓯𝓾𝓵𝓵𝔂:\n------------------------------------")
+        print()
+        random.shuffle(l)
+        cnto=0
+        for i in range(5):
+            print(l[i][0])
+            a=input("𝓐𝓷𝓼𝔀𝓮𝓻- ")
+            if a==l[i][1]:
+                print("ＣＯＲＲＥＣＴ ＡＮＳＷＥＲ ✅")
+                print("\n-⦾-⦾-⦾-⦾-⦾-⦾-⦾-⦾-⦾-⦾-⦾-⦾-⦾-⦾-⦾-⦾-⦾-⦾-⦾-⦾-⦾-⦾-⦾-⦾-⦾-⦾-⦾-⦾-⦾-⦾-⦾-⦾-⦾-⦾-⦾-⦾-⦾-⦾-⦾-⦾  \n")
+                cnto=cnto+1
+
+            else:
+                 print("\nＩＮＣＯＲＲＥＣＴ ＡＮＳＷＥＲ ❌")
+                 print("\nYou can start over again\nYou cannot go to level 2")
+                 break
+             
+    
+        
+        if cnto==5:
+            print("🆈🅾🆄 🅷🅰🆅🅴 🆂🆄🅲🅲🅴🆂🆂🅵🆄🅻🅻🆈 🅲🅾🅼🅿🅻🅴🆃🅴🅳 🅻🅴🆅🅴🅻 1 \n🅰🅻🅻 🆃🅷🅴 🅱🅴🆂🆃 🅵🅾🆁 🆃🅷🅴 🅽🅴🆇🆃 🅻🅴🆅🅴🅻 ")
+            nonlocal cnt1
+            cnt1=5
+            level2()
+            
+            
+        else:
+            cnt1=cnto
+            cnt2=0
+            leadership()
+
+
+ def level2():
+ print("\n🅻🅴🆅🅴🅻 2 🆂🆃🅰🆁🆃🆂\n")
+    
+    
+  print('''
+                                     ╭╮╭┳┳━┳┳╮╭━━┳━━┳━┳━┳━╮
+                                     ┃┃┃┃┃╭┫╭╯┃╭━┫╭╮┃┃┃┃┃┳╯
+                                     ┃╰┫┃┃╰┫╰╮┃╰╮┃┣┫┃┃┃┃┃┻╮
+                                     ╰━┻━┻━┻┻╯╰━━┻╯╰┻┻━┻┻━╯  ''')
+    
+  print()
+  print()     
+  print("𝕀ℕ𝕊𝕋ℝ𝕌ℂ𝕋𝕀𝕆ℕ𝕊- 𝕐𝕆𝕌 ℍ𝔸𝕍𝔼 𝕋𝕆 𝔼ℕ𝕋𝔼ℝ 𝔸 𝕊𝕀ℕ𝔾𝕃𝔼 𝔻𝕀𝔾𝕀𝕋 𝔼𝕍𝔼ℕ ℕ𝕌𝕄𝔹𝔼ℝ 𝔸ℕ𝔻 𝕀𝔽 𝕐𝕆𝕌ℝ ℂℍ𝕆𝕀ℂ𝔼 𝕄𝔸𝕋ℂℍ𝔼𝕊 𝕎𝕀𝕋ℍ 𝕋ℍ𝔼 ℂ𝕆𝕄ℙ𝕌𝕋𝔼ℝ'𝕊 ℂℍ𝕆𝕀ℂ𝔼 𝕐𝕆𝕌 𝕎𝕀ℕ 𝕋ℍ𝔼 𝔾𝔸𝕄𝔼!")
+     cnt1=5
+     l1=[0,2,4,6,8]
+     f=int(input("Enter any single digit even number:"))
+     print()
+     print("Now it's computer's turn:")
+     j=random.choice(l1)
+     print("Computer's choice:",j)
+     print()
+     if f==j:
+         print("You won the game 😄🤩😄🤩😄:")
+         nonlocal cnt2
+         cnt2=5
+         leadership()
+        
+     else:
+         print("You lost 😶😵😶😵")
+         print()
+         cnt2=0
+         leadership()
+        
+        
+def leadership():
+       import pymysql as pm
+       conn=pm.connect(host="localhost",user="root",password="divyanshisql",database="game")
+       cur=conn.cursor()
+       p=name
+       q=cnt1
+       r=cnt2
+       query="insert into gamer values(%s,%s,%s)"
+       val=p,q,r
+       cur.execute(query,val)
+       conn.commit()
+       print()
+       query1=cur.execute("select * from gamer;")
+       la=cur.fetchall()
+       print("║        ℕ𝔸𝕄𝔼        ║  𝕃𝔼𝕍𝔼𝕃 𝟙  ║  𝕃𝔼𝕍𝔼𝕃 𝟚 ║")
+
+       for i in la:
+          print("║",i[0]," "*(18-len(i[0])),"║",i[1]," "*(8-len(str(i[1]))),"║",i[2]," "*(8-   len(str(i[2]))),"║")
+          
+    level1()
+
+
+
+def rps():
+    print()
+    print('''
+                                    █▀▀ ▄▀█ █▀▄▀█ █▀▀   ▀█
+                                    █▄█ █▀█ █░▀░█ ██▄   █▄          ''')
+    print() 
+    print("𝕀ℕ𝕊𝕋ℝ𝕌ℂ𝕋𝕀𝕆ℕ𝕊: 𝕐𝕠𝕦 𝕨𝕚𝕝𝕝 𝕙𝕒𝕧𝕖 𝕥𝕠 𝕡𝕝𝕒𝕪 ℝ𝕆ℂ𝕂 ℙ𝔸ℙ𝔼ℝ 𝕊ℂ𝕀𝕊𝕊𝕆ℝ𝕊 𝕨𝕚𝕥𝕙 𝕥𝕙𝕖 𝕔𝕠𝕞𝕡𝕦𝕥𝕖𝕣. 𝕐𝕠𝕦 𝕨𝕚𝕝𝕝 𝕓𝕖 𝕘𝕖𝕥𝕥𝕚𝕟𝕘 𝟝 𝕔𝕙𝕒𝕟𝕔𝕖𝕤 𝕚𝕟 𝕥𝕙𝕚𝕤 𝕘𝕒𝕞𝕖.")                              
+    print() 
+    
+
+    
+    
+
+    
+    def starty():
+        cnt=0
+        cntc=0
+        import random
+        for i in range(5):
+            choice=input("Enter r to choose rock\nEnter p to choose paper\nEnter s to choose scissor\nYour choice:")
+            l=["r","p","s"]
+            a=random.choice(l)
+            print("Computer's choice:",a)
+            if choice=="r" and a=="p":
+                cntc=cntc+1
+                print()
+                print("𝒞𝑜𝓂𝓅𝓊𝓉𝑒𝓇 𝑔𝑜𝓉 𝒶 𝓅𝑜𝒾𝓃𝓉")
+            if choice=="p" and a=="r":
+                cnt=cnt+1
+                print()
+                print("Ⓨⓞⓤ ⓖⓔⓣ ⓐ ⓟⓞⓘⓝⓣ 🤩")
+            if choice=="r" and a=="s":
+                cnt=cnt+1  
+                print()
+                print("Ⓨⓞⓤ ⓖⓔⓣ ⓐ ⓟⓞⓘⓝⓣ 🤩")
+            if choice=="s" and a=="r":
+                cntc=cntc+1
+                print()
+                print("𝒞𝑜𝓂𝓅𝓊𝓉𝑒𝓇 𝑔𝑜𝓉 𝒶 𝓅𝑜𝒾𝓃𝓉")
+            if choice=="p" and a=="s":
+                cntc=cntc+1
+                print()
+                print("𝒞𝑜𝓂𝓅𝓊𝓉𝑒𝓇 𝑔𝑜𝓉 𝒶 𝓅𝑜𝒾𝓃𝓉")
+            if choice=="s" and a=="p":
+                cnt=cnt+1
+                print()
+                print("Ⓨⓞⓤ ⓖⓔⓣ ⓐ ⓟⓞⓘⓝⓣ 🤩")
+            if choice==a:
+               print()
+               print("Same choice")
+        p=cnt
+        q=cntc
+        leadership2(p,q)
+        
+        
+    def leadership2(p,q):
+        import pymysql as pm
+        conn=pm.connect(host="localhost",user="root",password="divyanshisql",database="gamea")
+        cur=conn.cursor()
+        
+        t=name
+        if p>q:
+            s="You win 😄"
+        elif p==q:
+            s="Tie"
+        else:
+            s="You lost 🙁"
+        
+        query="insert into gamerb values(%s,%s,%s,%s)"
+        val=t,p,q,s
+        cur.execute(query,val)
+        conn.commit()
+        query1=cur.execute("select * from gamerb;")
+        lb=cur.fetchall()
+        print()
+        print("║  NAME    ║    𝕌𝕊𝔼ℝ ℙ𝕆𝕀ℕ𝕋  ║  ℂ𝕆𝕄ℙ𝕌𝕋𝔼ℝ'𝕊 ℙ𝕆𝕀ℕ𝕋  ║    ℝ𝔼𝕊𝕌𝕃𝕋  ")
+
+        for j in lb:
+             print("║",j[0]," "*(7-len(str(j[0]))),"║",j[1]," "*(14-len(str(j[1]))),"║",j[2]," "*(19-len(str(j[2]))),"║",j[3]," "*(15-len(j[3])))
+    
+                   
+    starty()
+
+
+
+
+
+
+
+
+
+
+
+print('''                            
+                                     ╭╮╭╮╭┳━━━┳╮╱╱╭━━━┳━━━┳━╮╭━┳━━━╮
+                                     ┃┃┃┃┃┃╭━━┫┃╱╱┃╭━╮┃╭━╮┃┃╰╯┃┃╭━━╯
+                                     ┃┃┃┃┃┃╰━━┫┃╱╱┃┃╱╰┫┃╱┃┃╭╮╭╮┃╰━━╮
+                                     ┃╰╯╰╯┃╭━━┫┃╱╭┫┃╱╭┫┃╱┃┃┃┃┃┃┃╭━━╯
+                                     ╰╮╭╮╭┫╰━━┫╰━╯┃╰━╯┃╰━╯┃┃┃┃┃┃╰━━╮
+                                     ╱╰╯╰╯╰━━━┻━━━┻━━━┻━━━┻╯╰╯╰┻━━━╯
+                                     
+                                                   🅼🅰🅳🅴 🅱🆈 🅳🅸🆅🆈🅰🅽🆂🅷🅸 🆂🅰🆇🅴🅽🅰''')
+
+while True:
+    ask=input("Want to play?\nY or N:")
+    if ask=="Y":
+        name=input("Enter your name:")
+        gchoice=int(input("Enter 1 to play game 1:\nEnter 2 to play game 2\nEnter your choice:"))
+        if gchoice==1:
+            game1()
+        if gchoice==2:
+            rps()    
+    else:
+        break
