@@ -1,0 +1,43 @@
+import random
+import time
+
+def show_colors(colors):
+    for color in colors:
+        print(color)
+        time.sleep(1)
+        print("\033c", end="")  # Clears the screen
+
+def get_user_input(length):
+    user_colors = []
+    for i in range(length):
+        color = input(f"Enter color {i+1}: ").strip().lower()
+        user_colors.append(color)
+    return user_colors
+
+def play_game():
+    colors = ["red", "blue", "green", "yellow", "purple", "orange"]
+    sequence = []
+    round_number = 1
+
+    while True:
+        print(f"Round {round_number}:")
+        sequence.append(random.choice(colors))
+        
+        print("Memorize the sequence of colors:")
+        show_colors(sequence)
+
+        print("\nNow it's your turn to input the colors!")
+        user_input = get_user_input(len(sequence))
+        
+        if user_input == sequence:
+            print("Correct! Moving to the next round.")
+            round_number += 1
+        else:
+            print("Oops! That's incorrect.")
+            print(f"The correct sequence was: {sequence}")
+            print(f"You reached round {round_number}.")
+            break
+
+if __name__ == "__main__":
+    print("Welcome to Color Memory Match!")
+    play_game()
