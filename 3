@@ -1,0 +1,132 @@
+#include <stdio.h>
+#include <string.h>
+
+// Define the structure for passenger information
+struct Passenger {
+    char name[50];
+    int age;
+    char mealOption[10];
+    char seatClass[15];
+    char seatPreference[10];
+    int seatNumber; // Added seat number
+};
+
+// Function to generate a "random" seat number without using stdlib
+int generateSeatNumber(int* seed) {
+    *seed = (*seed * 1103515245 + 12345) & 0x7FFFFFFF;
+    return ((*seed) % 100) + 1; // Generates a pseudo-random seat number between 1 and 100
+}
+
+int main() {
+    int numPassengers = 0;
+    char stopInput[5];
+    char destination[50];
+
+    // Declare an array of Passenger structures
+    struct Passenger passengers[100]; // Assuming a maximum of 100 passengers
+
+    // Initialize counters
+    int vegCount = 0, nonVegCount = 0;
+    int firstClassCount = 0, businessClassCount = 0, economyClassCount = 0;
+    int windowSeatCount = 0, aisleSeatCount = 0;
+
+    // Welcome message
+    printf("🌟✈️ WELCOME TO THE FUN SKY ADVENTURE! ✈️🌟\n");
+    printf("Where are we magically teleporting you today?: ");
+    scanf("%s", destination);
+
+    // Silly in-flight announcement
+    printf("\n**ATTENTION FANTASTIC PASSENGERS!**\n");
+    printf("Prepare for a bumpy ride through the clouds of silliness and a destination filled with laughter!\n");
+
+    // Input information for each passenger
+    do {
+        printf("\nEnter details for Passenger %d:\n", numPassengers + 1);
+
+        printf("Name: ");
+        scanf("%s", passengers[numPassengers].name);
+
+        // Check if the user wants to stop entering passengers
+        printf("Enter 'stop' to finish or any other key to continue: ");
+        scanf("%s", stopInput);
+
+        if (strcmp(stopInput, "stop") == 0) {
+            break;
+        }
+
+        printf("Age: ");
+        scanf("%d", &passengers[numPassengers].age);
+
+        // Silly meal option suggestion
+        printf("Veg or Non-Veg (or try 'Cosmic Kaleidoscope' for a surprise): ");
+        scanf("%s", passengers[numPassengers].mealOption);
+
+        // Counting categories
+        if (strcmp(passengers[numPassengers].mealOption, "Veg") == 0) {
+            vegCount++;
+        } else if (strcmp(passengers[numPassengers].mealOption, "Non-Veg") == 0) {
+            nonVegCount++;
+        }
+
+        // Silly seat class suggestion
+        printf("Seat Class (First/Business/Economy or 'Zero Gravity VIP'): ");
+        scanf("%s", passengers[numPassengers].seatClass);
+
+        // Counting seat classes
+        if (strcmp(passengers[numPassengers].seatClass, "First") == 0) {
+            firstClassCount++;
+        } else if (strcmp(passengers[numPassengers].seatClass, "Business") == 0) {
+            businessClassCount++;
+        } else if (strcmp(passengers[numPassengers].seatClass, "Economy") == 0) {
+            economyClassCount++;
+        }
+
+        // Silly seat preference suggestion
+        printf("Seat Preference (Window/Aisle or 'Cloud Surfer'): ");
+        scanf("%s", passengers[numPassengers].seatPreference);
+
+        // Counting seat preferences
+        if (strcmp(passengers[numPassengers].seatPreference, "Window") == 0) {
+            windowSeatCount++;
+        } else if (strcmp(passengers[numPassengers].seatPreference, "Aisle") == 0) {
+            aisleSeatCount++;
+        }
+
+        numPassengers++;
+    } while (1);
+
+    // Silly final announcement
+    printf("\n🚀🎉 Ready for takeoff to the whimsical wonderland of %s! Get ready to enjoy the ride! 🎉🚀\n", destination);
+
+    // Print information for each passenger with additional details
+    printf("\nFasten your seatbelts! Here's your enchanted boarding pass for the Fun Sky Adventure:\n");
+    int pseudoRandomSeed = 42; // Seed value for reproducibility
+    for (int i = 0; i < numPassengers; ++i) {
+        // Generate a "pseudo-random" seat number for each passenger without using stdlib
+        passengers[i].seatNumber = generateSeatNumber(&pseudoRandomSeed);
+
+        printf("\n🎟️ Passenger %d - %s's Magical Boarding Pass:\n", i + 1, passengers[i].name);
+        printf("🎂 Age: %d\n", passengers[i].age);
+        printf("🍔 Meal: %s\n", passengers[i].mealOption);
+        printf("🚀 Class: %s\n", passengers[i].seatClass);
+        printf("☁️ Seat Preference: %s\n", passengers[i].seatPreference);
+        printf("💺 Seat Number: %d\n", passengers[i].seatNumber);
+    }
+
+    // Add a dash of excitement with some random announcements
+    printf("\n**ATTENTION FANTASTIC PASSENGERS**\n");
+    printf("🎉 Brace yourselves for surprise in-flight performances, cosmic snacks, and magical memories throughout the journey!\n");
+
+    // Print counts for each category
+    printf("\n📊 Passenger Counts:\n");
+    printf("🌱 Veg: %d\n", vegCount);
+    printf("🥩 Non-Veg: %d\n", nonVegCount);
+    printf("🎩 First Class: %d\n", firstClassCount);
+    printf("💼 Business Class: %d\n", businessClassCount);
+    printf("🌍 Economy Class: %d\n", economyClassCount);
+    printf("🪟 Window Seat: %d\n", windowSeatCount);
+    printf("🛅 Aisle Seat: %d\n", aisleSeatCount);
+
+    return 0;
+}
+
