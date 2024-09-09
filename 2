@@ -1,11 +1,11 @@
 import random
 import time
+import os  # For clearing the screen
 
-def show_colors(colors):
-    for color in colors:
-        print(color)
-        time.sleep(1)
-        print("\033c", end="")  # Clears the screen
+def show_latest_color(color):
+    print(color)            # Display the latest color
+    time.sleep(1)           # Wait for 1 second
+    os.system('cls' if os.name == 'nt' else 'clear')  # Clear the screen
 
 def get_user_input(length):
     user_colors = []
@@ -21,15 +21,16 @@ def play_game():
 
     while True:
         print(f"Round {round_number}:")
-        sequence.append(random.choice(colors))
-        
-        print("Memorize the sequence of colors:")
-        show_colors(sequence)
+        new_color = random.choice(colors)  # Select a random new color
+        sequence.append(new_color)  # Add the new color to the sequence
+
+        print("Memorize the latest color:")
+        show_latest_color(new_color)  # Only show the latest color
 
         print("\nNow it's your turn to input the colors!")
-        user_input = get_user_input(len(sequence))
+        user_input = get_user_input(len(sequence))  # Ask the user to enter the full sequence
         
-        if user_input == sequence:
+        if user_input == sequence:  # If the user got the sequence right
             print("Correct! Moving to the next round.")
             round_number += 1
         else:
